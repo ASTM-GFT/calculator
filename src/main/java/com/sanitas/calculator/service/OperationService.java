@@ -9,6 +9,6 @@ public class OperationService {
 	}
 
 	public BigDecimal subtract(BigDecimal minuendNumber, BigDecimal subtrahendNumber) {
-		return BigDecimal.ZERO;
+		return minuendNumber.subtract(subtrahendNumber);
 	}
 }
