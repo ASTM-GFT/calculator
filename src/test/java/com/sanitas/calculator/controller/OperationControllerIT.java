@@ -1,4 +1,4 @@
-package com.sanitas.calculator.service.controller;
+package com.sanitas.calculator.controller;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
