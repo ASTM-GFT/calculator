@@ -5,6 +5,6 @@ import java.math.BigDecimal;
 public class OperationService {
 
 	public BigDecimal sum(BigDecimal firstNumber, BigDecimal secondNumber) {
-		return BigDecimal.ZERO;
+		return firstNumber.add(secondNumber);
 	}
 }
