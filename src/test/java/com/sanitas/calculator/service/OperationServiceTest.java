@@ -13,8 +13,16 @@ public class OperationServiceTest {
 	
 	@ParameterizedTest
 	@CsvSource({"0,0,0", "1,1,2", "3.5,2.6,6.1"})
-	public void shouldAddDoubles_whenReceivingTwoValues(BigDecimal firstNumber, BigDecimal secondNumber, BigDecimal expectedSum) {
+	public void shouldAdd_whenReceivingTwoValues(BigDecimal firstNumber, BigDecimal secondNumber, BigDecimal expectedSum) {
 		BigDecimal actualSum = operationService.sum(firstNumber, secondNumber);
+		
+		assertThat(actualSum).isEqualTo(expectedSum);
+	}
+	
+	@ParameterizedTest
+	@CsvSource({"0,0,0", "1,2,-1", "3.5,2.6,0.9"})
+	public void shouldSubtract_whenReceivingTwoValues(BigDecimal firstNumber, BigDecimal secondNumber, BigDecimal expectedSum) {
+		BigDecimal actualSum = operationService.subtract(firstNumber, secondNumber);
 		
 		assertThat(actualSum).isEqualTo(expectedSum);
 	}
