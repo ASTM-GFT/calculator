@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class OperationServiceTest {
+public class OperationServiceImplTest {
 
-	private OperationService operationService = new OperationService();
+	private OperationServiceImpl operationService = new OperationServiceImpl();
 	
 	@ParameterizedTest
 	@CsvSource({"0,0,0", "1,1,2", "3.5,2.6,6.1"})
