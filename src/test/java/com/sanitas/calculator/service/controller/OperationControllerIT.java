@@ -31,4 +31,16 @@ class OperationControllerIT {
 		 .andExpect(status().isOk())
          .andExpect(jsonPath("$.result", is("-99")));
 	}
+	
+	@Test
+	public void shouldFail_whenTheFirstRequestParameterIsNotPresent() throws Exception {
+		 mockMvc.perform(get("/calculator/sum").param("secondNumber", "100"))
+		 .andExpect(status().is4xxClientError());
+	}
+	
+	@Test
+	public void shouldFail_whenTheSecondRequestParameterIsNotPresent() throws Exception {
+		 mockMvc.perform(get("/calculator/subtract").param("firstNumber", "100"))
+		 .andExpect(status().is4xxClientError());
+	}
 }
